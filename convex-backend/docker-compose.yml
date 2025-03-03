@@ -2,8 +2,8 @@ services:
   backend:
     image: ghcr.io/get-convex/convex-backend:161e32648a971fb8ef591e61212f7b9fb7ff4f2c
     ports:
-      - "${PORT:-3210}:3210"
-      - "${SITE_PROXY_PORT:-3211}:3211"
+      - 3210
+      - 3211
     volumes:
       - data:/convex/data
     environment:
@@ -39,9 +39,9 @@ services:
   dashboard:
     image: ghcr.io/get-convex/convex-dashboard:161e32648a971fb8ef591e61212f7b9fb7ff4f2c
     ports:
-      - "${DASHBOARD_PORT:-6791}:6791"
+      - 6791
     environment:
-      - NEXT_PUBLIC_DEPLOYMENT_URL=http://127.0.0.1:${PORT:-3210}
+      - NEXT_PUBLIC_DEPLOYMENT_URL=https://convex-backend.ww.ci
     depends_on:
       backend:
         condition: service_healthy
