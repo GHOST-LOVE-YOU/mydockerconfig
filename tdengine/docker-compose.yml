@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  tdengine:
+    image: tdengine/tdengine:latest
+    restart: unless-stopped
+    ports:
+      - 80
+      - 6030
+      - 6041
+      - 6043
+      - 6044-6049
+      - 6044-6045/udp
+      - 6060
+networks: {}
