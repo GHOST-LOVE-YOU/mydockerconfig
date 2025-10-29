@@ -6,7 +6,7 @@ services:
     image: ghcr.io/komari-monitor/komari:latest
     restart: unless-stopped
     ports:
-      - "25774:25774"
+      - 25774
     environment:
       # 可自定义初始用户名和密码（不填则使用默认）
       ADMIN_USERNAME: sprig
